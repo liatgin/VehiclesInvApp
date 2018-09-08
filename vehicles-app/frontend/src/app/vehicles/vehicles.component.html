@@ -1,0 +1,62 @@
+ <mat-card>
+  <button mat-fab	class="add-btn" (click)="onAddClick()">
+      <mat-icon class="add-icon" matListIcon>add</mat-icon>
+  </button>		
+
+  <mat-accordion *ngIf="vehicles">
+    <mat-expansion-panel *ngFor = "let vehicle of vehicles">
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+          {{vehicle.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{vehicle.id}}
+        </mat-panel-description> 
+
+
+        <button mat-button class="action-btn" (click)="onEditClick(vehicle)">
+            <mat-icon class = "edit-icon" matListIcon>edit</mat-icon>
+        </button>
+
+        <button mat-button class="action-btn" (click)="onDeleteClick(vehicle)">
+            <mat-icon class = "archive-icon" matListIcon>cancel</mat-icon>
+        </button>
+
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <h3 mat-subheader>Vehicle data</h3>
+        <mat-list-item>
+          <h4 mat-line>ID: </h4>
+          <p mat-line> {{vehicle.id}} </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <h4 mat-line>Name: </h4>
+          <p mat-line> {{vehicle.name}} </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <h4 mat-line> Last successful connection: </h4>
+          <p mat-line> {{vehicle.lastSuccessfulConnection}} </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <h4 mat-line> Car Type: </h4>
+          <p mat-line> {{carTypeString(vehicle.carType)}} </p>
+        </mat-list-item>
+
+        <mat-list-item>
+          <h4 mat-line> Time created: </h4>
+          <p mat-line> {{vehicle.timeCreated}} </p>
+        </mat-list-item>
+
+      </mat-list>
+
+    </mat-expansion-panel> 
+  
+  </mat-accordion>
+</mat-card>
+
+
+

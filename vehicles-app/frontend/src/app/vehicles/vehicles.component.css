@@ -1,0 +1,32 @@
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-btn {
+    align-self: flex-end;
+    margin-bottom: 3em;
+    margin-right: -0.001em !important;
+    color: white !important;
+    background-color: gray;
+}
+
+.add-icon{
+    color: aliceblue;
+}
+
+.action-btn {
+    min-width: 0 !important;
+    margin-right: 3em;
+    padding: 2;
+    background-color: white;
+}
+
+.mat-expansion-panel {
+    border-style: inset;
+    border-width: 1px;
+}

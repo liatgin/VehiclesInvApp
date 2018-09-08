@@ -1,0 +1,10 @@
+.example-container {
+    margin: auto;
+    width: 60%;
+    border: 3px solid rgb(26, 18, 138);
+    padding: 10px;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
