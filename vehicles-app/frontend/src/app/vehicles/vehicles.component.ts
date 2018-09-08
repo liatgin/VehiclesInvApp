@@ -40,12 +40,12 @@ export class VehiclesComponent implements OnInit {
   onAddClick() {
     this.fillDetailsWindow()
     .then((vehicle: Vehicle) => {
-      this.addResident(vehicle);
+      this.addVehicle(vehicle);
     })
     .catch((err) => console.log(err));
   }
 
-  addResident(vehicle) {
+  addVehicle(vehicle) {
     this.serverApiService.addVehicle(vehicle)
       .then ((newVehicles) => {
         this.vehicles  = newVehicles;
