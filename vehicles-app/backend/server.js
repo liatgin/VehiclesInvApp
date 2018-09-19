@@ -72,9 +72,11 @@ app.put('/vehicle', function(req, res, next) {
         WHERE id = ? `;
    connection.query(updateQuery, [req.body.name, req.body.time_created, req.body.car_type, req.body.last_successful_connection, req.body.id], function (error, results, fields) {
 	  	if(error){
-	  		res.send(JSON.stringify({"status": 500, "error": error, "response": null})); 
+              res.send(JSON.stringify({"status": 500, "error": error, "response": null})); 
+              console.log('error: ', error);
 	  	} else {
-  			res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+              res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+            
 	  	}
   	});
 });

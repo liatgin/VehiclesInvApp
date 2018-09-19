@@ -1,23 +1,31 @@
-<div class="main-container" (ngSubmit)="onSaveClick()">
+<form class="main-container" (ngSubmit)="onSaveClick()">
 
   <mat-form-field>
-      <input matInput placeholder="ID" type="text" disabled [(ngModel)]="id">
+      <input matInput placeholder="ID" type="text" [disabled]="true" [formControl]="idFormControl" [(ngModel)]="id">
   </mat-form-field>
+
+  <br>
 
   <mat-form-field>
       <input matInput placeholder="Name" type="text" [formControl]="nameFormControl" required [(ngModel)]="name">
   </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Time created" [formControl]="timeCreatedFormControl" required  [(ngModel)]="timeCreated" name="timeCreated" disabled>
-  </mat-form-field>
+  <br>
 
   <mat-form-field>
-      <input matInput placeholder="Car type" type="text" [(ngModel)]="carType" name="carType">
+    <input matInput placeholder="Time created" [formControl]="timeCreatedFormControl" required  [(ngModel)]="time_created" name="time_created">
   </mat-form-field>
 
+  <br>
+
   <mat-form-field>
-    <input matInput placeholder="Last successful connection" type="text" [(ngModel)]="lastSuccessfulConnection" name="lastSuccessfulConnection">
+      <input matInput placeholder="Car type" type="text" [(ngModel)]="car_type" name="car_type">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Last successful connection" type="text" [(ngModel)]="last_successful_connection" name="last_successful_connection">
   </mat-form-field>
 
   
@@ -25,5 +33,5 @@
     <button id="btn-close" color="primary" mat-button (click)="onCloseClick()" type="button">Close</button>
     <button id="btn-save" color="primary" mat-button (click)="onSaveClick()" type="submit">Save</button>
   </div>
-</div>
+</form>
            

@@ -1,4 +1,4 @@
-.example-container {
+/* .example-container {
     margin: auto;
     width: 60%;
     border: 3px solid rgb(26, 18, 138);
@@ -7,4 +7,16 @@
   
   .example-container > * {
     width: 100%;
-  }
+  } */
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns-container {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+}

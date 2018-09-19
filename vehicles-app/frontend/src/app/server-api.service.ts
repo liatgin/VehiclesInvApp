@@ -26,25 +26,22 @@ export class ServerApiService {
     const reqParams = {
       id: vehicle.id,
       name: vehicle.name,
-      carType: vehicle.carType,
-      lastSuccessfulConnection: vehicle.lastSuccessfulConnection,
-      timeCreated: vehicle.timeCreated
+      car_type: vehicle.car_type,
+      last_successful_connection: vehicle.last_successful_connection,
+      time_created: vehicle.time_created
     };
 
     return this.http.put(this.vehicleUrl, reqParams)
-      .toPromise()
-      .then((response: Response) => {
-        return this.vehicles();
-      });
+      .toPromise();
   }
 
   addVehicle(vehicle: Vehicle) {
     const reqParams = {
       id: vehicle.id,
       name: vehicle.name,
-      carType: vehicle.carType,
-      lastSuccessfulConnection: vehicle.lastSuccessfulConnection,
-      timeCreated: vehicle.timeCreated
+      car_type: vehicle.car_type,
+      last_successful_connection: vehicle.last_successful_connection,
+      time_created: vehicle.time_created
     };
 
     return this.http.post(this.vehicleUrl, reqParams)

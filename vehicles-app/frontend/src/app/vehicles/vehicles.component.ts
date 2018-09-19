@@ -24,18 +24,6 @@ export class VehiclesComponent implements OnInit {
       });
   }
 
-  carTypeString(type) {
-    if (type === 0) {
-      return 'SUV';
-    }
-    if (type === 1) {
-      return 'Hybrid';
-    }
-    if (type === 2) {
-      return 'Truck';
-    }
-  }
-
 
   onAddClick() {
     this.fillDetailsWindow()
@@ -69,9 +57,12 @@ export class VehiclesComponent implements OnInit {
 
   editVehicle(vehicle: Vehicle) {
     this.serverApiService.editVehicle(vehicle)
+    .then(() => {
+      this.serverApiService.vehicles()
       .then((newVehicles) => {
-        this.vehicles = newVehicles;
+      this.vehicles = newVehicles;
       });
+    });
   }
 
   async fillDetailsWindow(vehicle?: Vehicle): Promise<Vehicle> {
@@ -79,9 +70,9 @@ export class VehiclesComponent implements OnInit {
     const data = {
       id:  vehicle && vehicle.id,
       name: vehicle && vehicle.name,
-      carType: vehicle && vehicle.carType,
-      timeCreated: vehicle && vehicle.timeCreated,
-      lastSuccessfulConnection: vehicle && vehicle.lastSuccessfulConnection
+      car_type: vehicle && vehicle.car_type,
+      time_created: vehicle && vehicle.time_created,
+      last_successful_connection: vehicle && vehicle.last_successful_connection
     };
 
     const dialogRef = this.dialog.open(EditVehicleComponent, {
@@ -95,9 +86,9 @@ export class VehiclesComponent implements OnInit {
           const newVehicle: Vehicle = {
             id:  result.id,
             name: result.name,
-            carType: result.carType,
-            timeCreated: result.timeCreated,
-            lastSuccessfulConnection: result.lastSuccessfulConnection
+            car_type: result.car_type,
+            time_created: result.time_created,
+            last_successful_connection: result.last_successful_connection
           };
           resolve( newVehicle );
         } else {
